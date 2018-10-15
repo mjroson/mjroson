@@ -5,17 +5,17 @@ const skills = [
     "percent": 90
   },
   {
-    "id": 1,
+    "id": 2,
     "title": "Docker",
     "percent": 80
   },
   {
-    "id": 1,
+    "id": 3,
     "title": "Linux",
     "percent": 75
   },
   {
-    "id": 1,
+    "id": 4,
     "title": "React",
     "percent": 70
   },

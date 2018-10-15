@@ -6,10 +6,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-
-
 
 const styles = {
   root: {
@@ -24,9 +20,27 @@ const styles = {
   },
 };
 
+const sections = [
+  {tag: "#aboutme", name: "Sobre mi"},
+  {tag: "#experience", name: "Experiencia"},
+  {tag: "#projects", name: "Trabajos"},
+  {tag: "#education", name: "Educacion"},
+  {tag: "#contact", name: "Contacto"},
+
+
+]
 
 class Header extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { currentPage: window.location.hash ? window.location.hash : sections[0].tag };
+  }
+
+  changePage = (value) => {
+    this.setState({currentPage: value});
+    window.location.hash = value;
+  };
 
 
   render() {
@@ -34,21 +48,20 @@ class Header extends Component {
 
     return (
       <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
+        <AppBar position="fixed" color="default">
+          <Toolbar>
             {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu"> <MenuIcon /></IconButton> */}
-
-          <Typography variant="title" color="inherit" className={classes.grow}>
-            Matias Roson
-          </Typography>
-          <Button color="inherit">Sobre mi</Button>
-          <Button color="inherit">Experiencia</Button>
-          <Button color="inherit">Trabajos</Button>
-          <Button color="inherit">Educacion</Button>
-          <Button color="inherit">Contacto</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
+            <Typography variant="title" color="inherit" className={classes.grow}>
+              Matias Roson
+            </Typography>
+            {sections.map(section => (
+              <Button color="inherit"
+                disabled={this.state.currentPage == section.tag}
+                onClick={() => this.changePage(section.tag)}>{section.name}</Button>
+            ))}
+          </Toolbar>
+        </AppBar>
+      </div>
     );
   }
 }
