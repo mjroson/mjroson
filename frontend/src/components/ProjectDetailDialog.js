@@ -11,7 +11,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
 import { Carousel } from 'react-responsive-carousel';
-
+import DialogContent from '@material-ui/core/DialogContent';
+import Particles from 'react-particles-js';
+import {particlesConfigSky} from '../data/particlesConfig';
 
 const styles = {
   appBar: {
@@ -22,7 +24,11 @@ const styles = {
   },
   carousel: {
     maxHeight: '700px'
-  }
+  },
+  dialogProjectContent: {
+    backgroundColor: "#d45800",
+    position: 'relative'
+}
 };
 
 function Transition(props) {
@@ -42,6 +48,9 @@ class ProjectDetailDialog extends React.Component {
           fullScreen
           open={open}
           onClose={this.handleClose}
+          id="dialogproject"
+          scroll="paper"
+
           TransitionComponent={Transition}
         >
           <AppBar className={classes.appBar}>
@@ -59,6 +68,8 @@ class ProjectDetailDialog extends React.Component {
               </Button>
             </Toolbar>
           </AppBar>
+          <DialogContent className={classes.dialogProjectContent}>
+          <Particles id="particleBg" params={particlesConfigSky}/>
           {project != null && (
               <Grid container spacing={40}>
                   <Grid item xs={6}>
@@ -81,6 +92,7 @@ class ProjectDetailDialog extends React.Component {
                   </Grid>
               </Grid>
             )}
+            </DialogContent>
         </Dialog>
     );
   }

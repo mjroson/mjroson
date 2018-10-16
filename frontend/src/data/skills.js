@@ -6,16 +6,21 @@ const skills = [
   },
   {
     "id": 2,
-    "title": "Docker",
+    "title": "Python",
     "percent": 80
   },
   {
     "id": 3,
-    "title": "Linux",
-    "percent": 75
+    "title": "Docker",
+    "percent": 80
   },
   {
     "id": 4,
+    "title": "Linux",
+    "percent": 80
+  },
+  {
+    "id": 5,
     "title": "React",
     "percent": 70
   },

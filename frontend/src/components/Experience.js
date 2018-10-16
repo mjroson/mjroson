@@ -14,6 +14,9 @@ const styles = theme => ({
   },
   sectionTitle:{
     marginBottom: "30px",
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'center',
+    },
   }
 });
 

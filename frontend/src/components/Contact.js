@@ -10,7 +10,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
-import ContactForm from './ContactForm';
+import CustomForm from './ContactForm';
+import Typography from '@material-ui/core/Typography';
+import {socialNetworkListItems} from './socialNetworkList';
 
 const styles = theme => ({
   box: {
@@ -19,47 +21,28 @@ const styles = theme => ({
   },
   sectionTitle:{
     marginBottom: "30px",
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'center',
+    },
   }
 });
 
 class Contact extends Component {
 
   render() {
-    //const { classes } = this.props;
+    const { classes } = this.props;
 
     return (
       <React.Fragment>
         <Grid container spacing={40}>
             <Grid item md={6} lg={6}>
-            <List component="nav">
-              <ListItem button>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="LinkedIn" secondary="https://www.linkedin.com/in/matiasroson/"/>
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <DraftsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Github" secondary="https://github.com/mjroson"/>
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <DraftsIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Bitbucket" secondary="https://bitbucket.org/mjroson/" />
-              </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <DraftsIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Email" secondary="matiroson@gmail.com" />
-              </ListItem>
+            <Typography className={classes.sectionTitle} variant="display1" component="h1" align="left">Redes sociales</Typography>
+            <List>
+              {socialNetworkListItems}
             </List>
             </Grid>
             <Grid item md={6} lg={6}>
-                <ContactForm/>
+                <CustomForm/>
             </Grid>
         </Grid>
       </React.Fragment>

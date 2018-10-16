@@ -17,8 +17,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from 'classnames';
 
 import Particles from 'react-particles-js';
-import particlesConfig from './data/particlesConfig';
-import ResponsiveLayout from './components/ResponsiveLayout';
+import {particlesConfig} from './data/particlesConfig';
 
 
 const styles = theme => ({
@@ -26,9 +25,12 @@ const styles = theme => ({
     flexGrow: 1,
   },
   sections:{
-    padding: '100px 40px;',
+    padding: '120px 40px 40px;',
 
   },
+  particleBg: {
+    margin: '-120px -40px -40px'
+},
   impar:{
     backgroundColor: theme.palette.background.paper,
   },
@@ -45,7 +47,7 @@ class App extends Component {
         <Header/>
         <main id="main">
           <div className={classNames(classes.sections, classes.impar)} id="aboutme" style={{background: "tomato"}}>
-              <Particles id="particleBg" params={particlesConfig}/>
+              <Particles id="particleBg" params={particlesConfig} className={classes.particleBg}/>
               <AboutMe/>
             </div>
             <div className={classNames(classes.sections, classes.par)} id="experience">
