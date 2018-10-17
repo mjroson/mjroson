@@ -14,6 +14,7 @@ import { Carousel } from 'react-responsive-carousel';
 import DialogContent from '@material-ui/core/DialogContent';
 import Particles from 'react-particles-js';
 import {particlesConfigSky} from '../data/particlesConfig';
+import Slider from "react-slick";
 
 const styles = {
   appBar: {
@@ -27,7 +28,17 @@ const styles = {
   },
   dialogProjectContent: {
     backgroundColor: "#d45800",
-    position: 'relative'
+    position: 'relative',
+    padding: '40px 20px'
+  },
+  projectParticleBg:{
+    margin: "-40px -20px",
+  },
+  sliderContent: {
+    textAlign: "center"
+},
+sliderImage: {
+    display: 'inherit !important'
 }
 };
 
@@ -43,57 +54,69 @@ class ProjectDetailDialog extends React.Component {
 
   render() {
     const { classes, open, project } = this.props;
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return (
-        <Dialog
-          fullScreen
-          open={open}
-          onClose={this.handleClose}
-          id="dialogproject"
-          scroll="paper"
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={this.handleClose}
+        id="dialogproject"
+        scroll="paper"
 
-          TransitionComponent={Transition}
+        TransitionComponent={Transition}
         >
-          <AppBar className={classes.appBar}>
-            <Toolbar>
-              <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
-                <CloseIcon />
-              </IconButton>
-              {project != null && (
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            {project != null && (
               <Typography variant="title" component="h5" color="inherit" className={classes.flex}>
                 {project.title}
               </Typography>
-              )}
-              <Button color="inherit" onClick={this.handleClose}>
-                Cerrar
-              </Button>
-            </Toolbar>
-          </AppBar>
-          <DialogContent className={classes.dialogProjectContent}>
-          <Particles id="particleBg" params={particlesConfigSky}/>
-          {project != null && (
-              <Grid container spacing={40}>
-                  <Grid item xs={6}>
-                  <Carousel autoPlay className={classes.carousel}>
-                    {project.images.map((image, index) => (
-                        <div key={index}>
-                            <img src={image.img} alt={image.legend}/>
-                            <p className="legend">{image.legend}</p>
-                        </div>
-                    ))}
-                  </Carousel>
-                  </Grid>
-                  <Grid item xs={6}>
-                  <Typography variant="display1" component="p" color="inherit" className={classes.flex}>
-                    {project.from} - {project.to}
-                  </Typography>
-                    <Typography variant="body1" component="p" color="inherit" className={classes.flex}>
-                      {project.description}
-                    </Typography>
-                  </Grid>
-              </Grid>
             )}
-            </DialogContent>
-        </Dialog>
+            <Button color="inherit" onClick={this.handleClose}>
+              Cerrar
+            </Button>
+          </Toolbar>
+        </AppBar>
+        <DialogContent className={classes.dialogProjectContent}>
+          <Particles id="particleBg" className={classes.projectParticleBg} params={particlesConfigSky}/>
+          {project != null && (
+            <Grid container spacing={40}>
+              <Grid item xs={4}>
+                <Slider {...settings}>
+                    {project.images.map((image, index) => (
+                      <div className={classes.sliderContent}>
+                        <img src={image.img} alt={image.legend} className={classes.sliderImage}/>
+                        <h3>{image.legend}</h3>
+                      </div>
+                    ))}
+                </Slider>
+                {/* <Carousel autoPlay width="auto" className={classes.carousel} showArrows={true} showThumbs={false} infiniteLoop={true}>
+                  {project.images.map((image, index) => (
+                    <div key={index}>
+                      <img src={image.img} alt={image.legend} width="auto"/>
+                      <p className="legend">{image.legend}</p>
+                    </div>
+                  ))}
+                </Carousel>*/}
+              </Grid>
+              <Grid item xs={8}>
+                <Typography variant="display1" component="p" color="inherit" className={classes.flex}>
+                  {project.from} - {project.to}
+                </Typography>
+                <Typography variant="body1" component="p" color="inherit" className={classes.flex}>
+                  {project.description}
+                </Typography>
+              </Grid>
+            </Grid>
+          )}
+        </DialogContent>
+      </Dialog>
     );
   }
 }

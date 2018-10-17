@@ -5,8 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import skills from "../data/skills";
-
+import {tecnologies} from "../data/tecnologies";
 import LinearProgress from '@material-ui/core/LinearProgress';
+import CarouselTecnology from "./CarouselTecnology";
 
 const styles = theme => ({
   sectionTitle:{
@@ -58,6 +59,8 @@ class Skill extends Component {
                   <LinearProgress className={classes.progressSkill} color={index % 2 === 0 ? "secondary": "primary"} variant="buffer" value={skill.percent} valueBuffer={100} />
               </Grid>
             ))}
+            <Typography className={classes.sectionTitle} variant="display1" component="h1" align="left">Tecnologias que alguna vez use</Typography>
+            <CarouselTecnology tecnologies={tecnologies} />
           </React.Fragment>
     );
   }

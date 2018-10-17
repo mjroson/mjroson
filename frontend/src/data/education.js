@@ -16,18 +16,18 @@ const education = [
     "title": "Curso de ingles",
     "image": "/static/education/unc.jpg",
     "intitution": "Facultad de lenguas - Cordoba Argentina",
-    "description": ``,
+    "description": `Curse 1 año de los 4 años para completar la carrera.`,
     "ref": "http://www.lenguas.unc.edu.ar/landings/cursos-intensivos/1er-ingles.html"
   },
   {
-    "id": 3,
-    "from": "2014-02-01",
-    "to": "2014-03-06",
-    "title": "Curso Online - Django 1.6",
-    "intitution": "DevCode",
-    "image": "/static/education/devcodela.jpg",
-    "description": `Aprendí diversos conceptos propios de django, los necesarios para empezar a aplicar esta tecnología en soluciones de software.`,
-    "ref": "https://devcode.la/cursos/django-16/"
+    "id": 5,
+    "from": "2012-02-01",
+    "to": "2012-12-05",
+    "title": "Programación web avanzada con Java",
+    "intitution": "Becas Control F",
+    "image": "/static/education/becasctrlf.jpg",
+    "description": `Aprendí, diversos conceptos para el desarrollo web sobre Java. teórico y práctico.`,
+    "ref": ""
   },
   {
     "id": 4,
@@ -40,14 +40,14 @@ const education = [
     "ref": ""
   },
   {
-    "id": 5,
-    "from": "2012-02-01",
-    "to": "2012-12-05",
-    "title": "Programación web avanzada con Java",
-    "intitution": "Becas Control F",
-    "image": "/static/education/becasctrlf.jpg",
-    "description": `Aprendí, diversos conceptos para el desarrollo web sobre Java. teórico y práctico.`,
-    "ref": ""
+    "id": 3,
+    "from": "2014-02-01",
+    "to": "2014-03-06",
+    "title": "Curso Online - Django 1.6",
+    "intitution": "DevCode",
+    "image": "/static/education/devcodela.jpg",
+    "description": `Aprendí diversos conceptos propios de django, los necesarios para empezar a aplicar esta tecnología en soluciones de software.`,
+    "ref": "https://devcode.la/cursos/django-16/"
   },
   {
     "id": 6,

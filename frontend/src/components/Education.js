@@ -6,13 +6,23 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import educations from "../data/education";
-import Avatar from '@material-ui/core/Avatar';
-
+import ButtonBase from '@material-ui/core/ButtonBase';
+import {formatDate} from '../utils';
 
 const styles = theme => ({
   box: {
     flexGrow: 1,
     padding: theme.spacing.unit * 2,
+  },
+  image: {
+    width: 128,
+    height: 128,
+  },
+  img: {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
   },
   sectionTitle:{
     marginBottom: "30px",
@@ -29,19 +39,31 @@ class Education extends Component {
         <Typography className={classes.sectionTitle} variant="display1" component="h1" align="center">Educacion</Typography>
         <Grid container spacing={40}>
           {educations.map(education => (
-            <Grid item key={education.id} sm={12} md={6} lg={6}>
-              <Paper className={classes.box} elevation={1}>
-                <Avatar align="center" alt={education.title} src={education.image}/>
-                <Typography variant="title" component="h3">
-                  {education.title}
-                </Typography>
-                <p>{education.from} - {education.to}</p>
-                <Typography component="p">
-                  {education.description}
-                  {education.ref &&
-                    <a href={education.ref} >Referencia</a>
-                  }
-                </Typography>
+            <Grid item xs={12} sm={6} lg={6} key={education.id}>
+              <Paper className={classes.box}>
+                <Grid container spacing={16}>
+                  <Grid item>
+                    <ButtonBase className={classes.image}>
+                      <img className={classes.img} alt={education.title} src={education.image} />
+                    </ButtonBase>
+                  </Grid>
+                  <Grid item xs={12} sm container>
+                    <Grid item xs container direction="column" spacing={16}>
+                      <Grid item xs>
+                        <Typography gutterBottom variant="title">
+                          {education.title}
+                        </Typography>
+                        <Typography gutterBottom>{education.description}</Typography>
+                        <Typography color="textSecondary">{ formatDate(education.from) } - { formatDate(education.to) }</Typography>
+                      </Grid>
+                      {education.ref !== "" && (
+                        <Grid item>
+                          <a href={education.ref} target="_blank">Referencia</a>
+                        </Grid>
+                      )}
+                    </Grid>
+                  </Grid>
+                </Grid>
               </Paper>
             </Grid>
           ))}

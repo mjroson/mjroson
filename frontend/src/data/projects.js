@@ -1,40 +1,3 @@
-const tecnologies = {
-    "angularjs": "AngularJS",
-    "antd": "Antd",
-    "aws": "Amazon Web Services",
-    "bootstrap": "Bootstrap",
-    "celery": "Celery",
-    "cordova": "Cordova",
-    "django": "Django",
-    "djangoadmin": "Django Admin",
-    "djangochannel": "Django Channel",
-    "djangocms": "Django CMS",
-    "djangorestframework": "Django Rest Framework",
-    "docker": "Docker",
-    "elasticsearch": "ElasticSearch",
-    "fullcalendar": "FullCalendar.io",
-    "googlemaps": "Google Maps",
-    "haystack": "HayStack",
-    "ionic": "Ionic",
-    "jquery": "JQuery",
-    "jqueryui": "JQuery UI",
-    "leaflet": "Leaflet",
-    "less": "Less",
-    "linux": "Linux",
-    "materialui": "Material UI",
-    "mongodb": "MongoDB",
-    "postgis": "PostGIS",
-    "postgresql": "PostgresQL",
-    "openstreetmap": "OpenStreetMap",
-    "rabbitmq": "RabbitMQ",
-    "reactjs": "React JS",
-    "redux": "Redux",
-    "sass": "Sass",
-    "sqlite": "SQLite",
-    "vuejs": "Vue JS",
-}
-
-
 const projects = [
   {
     "id": "1",
@@ -216,7 +179,11 @@ const projects = [
         "OpenStreetMap",
         "Leaflet"
     ],
-    "images": []
+    "images": [
+      {"img": "/static/portfolio/compraloahi_mobile/avisos.jpg", "legend": "Avisos"},
+      {"img": "/static/portfolio/compraloahi_mobile/phone-map.jpg", "legend": "Mapa"},
+      {"img": "/static/portfolio/compraloahi_mobile/menu.jpg", "legend": "Menu"},
+    ]
   },
   {
     "id": "10",
