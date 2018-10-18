@@ -16,7 +16,7 @@ const months = {
 
 
 export const formatDate = (date) => {
-  if(date == 'now' || date == 'actualidad') return 'now';
+  if(date === 'now' || date === 'actualidad') return 'now';
   let dlist = date.split('-');
   return months[Number(dlist[1])].substring(0,3) + " " + dlist[0];
 }

@@ -27,12 +27,12 @@ class Footer extends Component {
     const { classes } = this.props;
 
     return (
-      <footer className={classes.footer}>
+      <footer className={classes.footer} id="footer">
         <Typography variant="title" align="center" gutterBottom>
           Footer
         </Typography>
         <Typography variant="title" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
+          @2018
         </Typography>
       </footer>
     );

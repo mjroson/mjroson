@@ -46,7 +46,7 @@ class App extends Component {
         <CssBaseline />
         <Header/>
         <main id="main">
-          <div className={classNames(classes.sections, classes.impar)} id="aboutme" style={{background: "tomato"}}>
+          <div className={classNames(classes.sections, classes.impar)} id="aboutme">
               <Particles id="particleBg" params={particlesConfig} className={classes.particleBg}/>
               <AboutMe/>
             </div>
@@ -69,8 +69,9 @@ class App extends Component {
             <div className={classNames(classes.sections, classes.impar)} id="contact">
               <Contact/>
             </div>
+
           </main>
-          <Footer className={classNames(classes.impar)}/>
+            <Footer />
         </React.Fragment>
       );
     }

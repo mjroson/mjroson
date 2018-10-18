@@ -5,12 +5,9 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import Grid from '@material-ui/core/Grid';
-import { Carousel } from 'react-responsive-carousel';
 import DialogContent from '@material-ui/core/DialogContent';
 import Particles from 'react-particles-js';
 import {particlesConfigSky} from '../data/particlesConfig';
@@ -27,7 +24,7 @@ const styles = {
     maxHeight: '700px'
   },
   dialogProjectContent: {
-    backgroundColor: "#d45800",
+    backgroundColor: "#f27537",
     position: 'relative',
     padding: '40px 20px'
   },

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Chip from '@material-ui/core/Chip';
-import FaceIcon from '@material-ui/icons/Face';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,7 +10,6 @@ import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { mailFolderListItems, otherMailFolderListItems } from './tileData';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import Drawer from '@material-ui/core/Drawer';
@@ -79,7 +77,7 @@ class Header extends Component {
           {sections.map(section => (
             <ListItem button key={section.tag}
                       onClick={() => this.changePage(section.tag)}
-                      disabled={this.state.currentPage == section.tag}>
+                      disabled={this.state.currentPage === section.tag}>
               <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon>
@@ -109,7 +107,7 @@ class Header extends Component {
               <Button color="inherit"
                 key={section.tag}
                 className={classes.menuButton}
-                disabled={this.state.currentPage == section.tag}
+                disabled={this.state.currentPage === section.tag}
                 onClick={() => this.changePage(section.tag)}>{section.name}</Button>
             ))}
             <IconButton

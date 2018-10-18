@@ -8,7 +8,6 @@ import TextField from '@material-ui/core/TextField';
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 import Button from '@material-ui/core/Button';
 import green from '@material-ui/core/colors/green';
-import classNames from 'classnames';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
@@ -74,10 +73,10 @@ class ContactForm extends Component {
 
 
   render() {
-    const { classes, status, message, onValidated } = this.props;
-    const buttonClassname = classNames({
+    const { classes, status } = this.props;
+    /*const buttonClassname = classNames({
       [classes.buttonSuccess]: status === "success",
-    });
+    });*/
 
     const form = (
       <form className={classes.container} noValidate>
@@ -135,7 +134,7 @@ class ContactForm extends Component {
         {status === "success" && (
           <Typography variant="title" color="secondary" component="h3" align="center">Gracias por contactarte {this.state.name} , te respondere a la brevedad.</Typography>
         )}
-        {status != 'success' && form}
+        {status !== 'success' && form}
       </Paper>
     );
   }

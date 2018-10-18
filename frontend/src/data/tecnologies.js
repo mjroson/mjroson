@@ -7,12 +7,12 @@ export const tecnologies = {
     "antd": {
         "name": "Antd",
         "category": ["FrontEnd", "Style"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/antd.png"
     },
     "aws": {
         "name": "Amazon Web Services",
         "category": ["Services", "Server"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/aws.png"
     },
     "babel": {
       "name": "Babel",
@@ -27,57 +27,62 @@ export const tecnologies = {
     "bootstrap": {
         "name": "Bootstrap",
         "category": ["FrontEnd", "Style"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/bootstrap.png"
     },
     "celery": {
         "name": "Celery",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/celery.png"
     },
     "cordova": {
         "name": "Cordova",
         "category": ["Mobile", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/cordova.png"
     },
     "css": {
       "name": "Css3",
       "category": ["Language"],
       "image": "/static/tecnology/logo/css3.png"
     },
+    "debian": {
+        "name": "Debian",
+        "category": ["SO"],
+        "image": "/static/tecnology/logo/debian.png"
+    },
     "django": {
         "name": "Django",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/django.png"
     },
     "djangoadmin": {
         "name": "Django Admin",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/django.png"
     },
     "djangochannel": {
         "name": "Django Channel",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/djangochannels.png"
     },
     "djangocms": {
         "name": "Django CMS",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/djangocms.png"
     },
     "djangorestframework": {
         "name": "Django Rest Framework",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/djangorest.png"
     },
     "docker": {
         "name": "Docker",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/docker.png"
     },
     "elasticsearch": {
         "name": "ElasticSearch",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/elasticsearch.png"
     },
     "es6": {
       "name": "Es6",
@@ -87,7 +92,7 @@ export const tecnologies = {
     "fullcalendar": {
         "name": "FullCalendar.io",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/fullcalendar.png"
     },
     "git": {
       "name": "Git",
@@ -97,7 +102,7 @@ export const tecnologies = {
     "googlemaps": {
         "name": "Google Maps",
         "category": ["Service", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/googlemaps.png"
     },
     "grunt": {
       "name": "Grunt",
@@ -109,10 +114,15 @@ export const tecnologies = {
       "category": ["Tool"],
       "image": "/static/tecnology/logo/gulp.png"
     },
+    "gunicorn": {
+      "name": "Gunicorn",
+      "category": ["Tool", "Backend"],
+      "image": "/static/tecnology/logo/gunicorn.png"
+    },
     "haystack": {
         "name": "HayStack",
         "category": ["Backend", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/haystack.png"
     },
     "html5": {
       "name": "HTML 5",
@@ -137,17 +147,17 @@ export const tecnologies = {
     "jquery": {
         "name": "JQuery",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/jquery.png"
     },
     "jqueryui": {
         "name": "JQuery UI",
         "category": ["FrontEnd", "Style"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/jqueryui.png"
     },
     "leaflet": {
         "name": "Leaflet",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/leaflet.png"
     },
     "less": {
         "name": "Less",
@@ -157,12 +167,12 @@ export const tecnologies = {
     "linux": {
         "name": "Linux",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/linux.png"
     },
     "materialui": {
         "name": "Material UI",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/materialui.png"
     },
     "mongodb": {
         "name": "MongoDB",
@@ -172,7 +182,7 @@ export const tecnologies = {
     "postgis": {
         "name": "PostGIS",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/postgis.png"
     },
     "postgresql": {
         "name": "PostgresQL",
@@ -197,12 +207,12 @@ export const tecnologies = {
     "openstreetmap": {
         "name": "OpenStreetMap",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/openstreetmap.png"
     },
     "rabbitmq": {
         "name": "RabbitMQ",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/rabbitmq.png"
     },
     "reactjs": {
         "name": "React JS",
@@ -217,22 +227,32 @@ export const tecnologies = {
     "redux": {
         "name": "Redux",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/redux.png"
     },
     "sass": {
         "name": "Sass",
         "category": ["FrontEnd", "Preprocesor"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/sass.png"
     },
     "sqlite": {
         "name": "SQLite",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/sqlite.png"
     },
     "sublime": {
       "name": "Sublime",
       "category": ["Tool"],
       "image": "/static/tecnology/logo/sublime.png"
+    },
+    "ubuntu": {
+      "name": "Ubuntu",
+      "category": ["SO"],
+      "image": "/static/tecnology/logo/ubuntu.png"
+    },
+    "uwsgi": {
+      "name": "UWSGI",
+      "category": ["Tool"],
+      "image": "/static/tecnology/logo/uwsgi.png"
     },
     "visualstudio": {
       "name": "VisualStudio",
@@ -242,7 +262,7 @@ export const tecnologies = {
     "vuejs": {
         "name": "Vue JS",
         "category": ["FrontEnd", "Framework"],
-        "image": "/static/tecnology/logo/angular.png"
+        "image": "/static/tecnology/logo/vuejs.png"
     },
     "webpack": {
       "name": "WebPack",

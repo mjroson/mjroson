@@ -30,7 +30,10 @@ const styles = theme => ({
   },
   containerVA: {
     display: 'flex'
-  }
+  },
+  textAboutme: {
+    color: "#c3c3c3"
+}
 });
 
 class AboutMe extends Component {
@@ -50,10 +53,10 @@ class AboutMe extends Component {
           </Grid>
           <Grid item sm={12} md={8}>
             <div className={classes.heroContent}>
-              <Typography variant="title" align="left" color="textPrimary" gutterBottom>
+              <Typography variant="title" align="left" color="textPrimary" gutterBottom className={classes.textAboutme}>
                 Full Stack Developer (Linux, Docker, Django, React)
               </Typography>
-              <Typography variant="body1" align="left" color="textSecondary" paragraph>
+              <Typography variant="body1" align="left" color="textSecondary" paragraph className={classes.textAboutme}>
                 Desarrollador apasionado y proactivo, con un interés constante y entusiasmo en el aprendizaje de nuevas tecnologías y asumir nuevos retos, siempre buscando el crecimiento personal y profesional.
                 Tratando de implementar e incluir buenas prácticas en los desarrollos, y automatizar tareas con el fin de aumentar la productividad y eficiencia constantemente en mi trabajo.
               </Typography>

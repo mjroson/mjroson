@@ -114,7 +114,11 @@ const projects = [
         "Leaflet",
         "LESS"
     ],
-    "images": []
+    "images": [
+      {"img": "/static/portfolio/compraloahi_web/map.jpg", "legend": "Mapa interactivo"},
+      {"img": "/static/portfolio/compraloahi_web/detalle-anuncio.jpg", "legend": "Detalle anuncio"},
+      {"img": "/static/portfolio/compraloahi_web/admin.jpg", "legend": "Administrador"},
+    ]
   },
   {
     "id": "6",

@@ -1,4 +1,4 @@
-export const particlesConfig = {
+export const particlesConfig1 = {
         	    "particles": {
         	        "number": {
         	            "value": 50
@@ -50,7 +50,7 @@ export const particlesConfigSky = {
 	};
 
 
-const particlesConfig1 = {
+export const particlesConfig = {
   "particles": {
     "number": {
       "value": 80,

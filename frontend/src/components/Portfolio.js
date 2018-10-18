@@ -7,12 +7,9 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import ProjectDetailDialog from './ProjectDetailDialog';
-import Button from '@material-ui/core/Button';
 import { formatDate } from '../utils';
 import CardHeader from '@material-ui/core/CardHeader';
 import projects from '../data/projects';
@@ -24,6 +21,7 @@ const styles = theme => ({
   },
   sectionTitle:{
     marginBottom: "30px",
+    color: "#c3c3c3",
   }
 });
 
@@ -63,19 +61,14 @@ class Portfolio extends Component {
                 <CardActionArea>
                   <CardHeader style={{background: '#c3c3c3'}}
                               disableTypography={true}
-                              title={<Typography variant="body2">{project.title}</Typography>} 
+                              title={<Typography variant="body2">{project.title}</Typography>}
                               align="center"/>
-                  {/* <CardContent style={{background: '#c3c3c3'}}>
-                    <Typography gutterBottom variant="body2" component="p" align="center">
-                      {project.title}
-                    </Typography>
-                  </CardContent>*/}
                   <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
                     className={classes.media}
                     height="140"
-                    image="/static/portfolio/compraloahi/mockup-mapa.jpg"
+                    image="/static/kronos.png"
                     title={project.title + "- image"}
                     />
                   <CardContent>

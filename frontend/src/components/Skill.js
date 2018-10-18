@@ -12,6 +12,7 @@ import CarouselTecnology from "./CarouselTecnology";
 const styles = theme => ({
   sectionTitle:{
     marginBottom: "30px",
+    color: "#c3c3c3",
   },
   progressSkill:{
     marginBottom: "15px",
@@ -59,7 +60,7 @@ class Skill extends Component {
                   <LinearProgress className={classes.progressSkill} color={index % 2 === 0 ? "secondary": "primary"} variant="buffer" value={skill.percent} valueBuffer={100} />
               </Grid>
             ))}
-            <Typography className={classes.sectionTitle} variant="display1" component="h1" align="left">Tecnologias que alguna vez use</Typography>
+            <Typography className={classes.sectionTitle} style={{marginTop: "15px"}} variant="headline" component="h4" align="left">Tecnologias que alguna vez use</Typography>
             <CarouselTecnology tecnologies={tecnologies} />
           </React.Fragment>
     );

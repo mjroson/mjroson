@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import Slider from "react-slick";
-import CardMedia from '@material-ui/core/CardMedia';
+
+
 const styles = theme => ({
   sectionTitle:{
     marginBottom: "30px",
@@ -22,7 +21,9 @@ tecnologyImage: {
   width: "100%"
 },
 tecnologyName:{
-  textAlign: "center"
+  textAlign: "center",
+  fontSize: "10px",
+  minHeight: "22px",
 }
 });
 
@@ -31,23 +32,22 @@ class CarouselTecnology extends Component {
   render() {
     const { classes, tecnologies } = this.props;
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
+      autoplay: true,
       slidesToShow: 5,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      centerPadding: 20,
+      centerMode: true,
+      //lazyLoad: 'ondemand'
     };
 
     return (
       <Slider {...settings}>
           {Object.keys(tecnologies).map((key, index) => (
-            <Card className={classes.tecnologyCard}>
+            <Card className={classes.tecnologyCard} key={key}>
               <img src={tecnologies[`${key}`].image} className={classes.tecnologyImage} alt={tecnologies[`${key}`].name}/>
-              {/*<CardMedia
-                className={classes.media}
-                image={tecnologies[`${key}`].image}
-                title={tecnologies[`${key}`].name}
-              />*/}
               <p className={classes.tecnologyName}>{tecnologies[`${key}`].name}</p>
             </Card>
           ))}
