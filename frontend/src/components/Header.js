@@ -17,7 +17,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import {socialNetworkListItems} from './socialNetworkList';
+import { SocialNetworkListItems } from './globals.js';
 
 const styles = theme => ({
   root: {
@@ -38,46 +38,39 @@ const styles = theme => ({
   },
 });
 
-const sections = [
+export const sections = [
   {tag: "#aboutme", name: "Sobre mi"},
   {tag: "#experience", name: "Experiencia"},
   {tag: "#projects", name: "Trabajos"},
   {tag: "#education", name: "Educacion"},
   {tag: "#contact", name: "Contacto"},
-
-
-]
+  {tag: "#footer", name: "Footer"},
+];
 
 class Header extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-        currentPage: window.location.hash ? window.location.hash : sections[0].tag,
         mobileOpen: false,
     };
   }
-
-  changePage = (value) => {
-    this.setState({currentPage: value, mobileOpen: false });
-    window.location.hash = value;
-  };
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, currentPage, changePage } = this.props;
     const drawer = (
       <div>
         <div className={classes.toolbar} />
         <Divider />
         <List>
-          {sections.map(section => (
+          {sections.filter(section => section.tag != '#footer').map(section => (
             <ListItem button key={section.tag}
-                      onClick={() => this.changePage(section.tag)}
-                      disabled={this.state.currentPage === section.tag}>
+                      onClick={() => changePage(section.tag)}
+                      disabled={currentPage === section.tag}>
               <ListItemIcon>
                 <InboxIcon />
               </ListItemIcon>
@@ -85,8 +78,7 @@ class Header extends Component {
             </ListItem>
           ))}
         </List>
-        <Divider />
-        <List>{socialNetworkListItems}</List>
+        <List>{SocialNetworkListItems}</List>
       </div>
     );
     return (
@@ -103,13 +95,14 @@ class Header extends Component {
         />
             </Typography>
 
-            {sections.map(section => (
+            {sections.filter(section => section.tag != '#footer').map(section => (
               <Button color="inherit"
                 key={section.tag}
                 className={classes.menuButton}
-                disabled={this.state.currentPage === section.tag}
-                onClick={() => this.changePage(section.tag)}>{section.name}</Button>
+                disabled={currentPage === section.tag}
+                onClick={() => changePage(section.tag)}>{section.name}</Button>
             ))}
+            <Divider />
             <IconButton
               color="inherit"
               aria-label="Open drawer"
@@ -141,6 +134,8 @@ class Header extends Component {
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
+  currentPage: PropTypes.string.isRequired,
+  changePage: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(Header);

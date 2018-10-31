@@ -8,61 +8,38 @@ import skills from "../data/skills";
 import {tecnologies} from "../data/tecnologies";
 import LinearProgress from '@material-ui/core/LinearProgress';
 import CarouselTecnology from "./CarouselTecnology";
+import { SectionTitle } from './globals.js';
 
 const styles = theme => ({
-  sectionTitle:{
-    marginBottom: "30px",
-    color: "#c3c3c3",
-  },
   progressSkill:{
     marginBottom: "15px",
-}
+  },
+  subTitle:{
+    color: "#c3c3c3",
+    textTransform: "uppercase",
+    margin: "30px 0px 20px"
+  }
 });
 
 class Skill extends Component {
-
-  state = {
-    completed: 0,
-    buffer: 10,
-  };
-
-  componentDidMount() {
-    this.timer = setInterval(this.progress, 500);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  progress = () => {
-    const { completed } = this.state;
-    if (completed > 100) {
-      this.setState({ completed: 0, buffer: 10 });
-    } else {
-      const diff = Math.random() * 10;
-      const diff2 = Math.random() * 10;
-      this.setState({ completed: completed + diff, buffer: completed + diff + diff2 });
-    }
-  };
-
-
   render() {
     const { classes } = this.props;
-
     return (
-          <React.Fragment>
-            <Typography className={classes.sectionTitle} variant="display1" component="h1" align="left">Habilidades</Typography>
-            {skills.map((skill, index) => (
-              <Grid item ks={12}  key={skill.id}>
-                <Typography variant="title" component="h5">
-                    {skill.title}
-                  </Typography>
-                  <LinearProgress className={classes.progressSkill} color={index % 2 === 0 ? "secondary": "primary"} variant="buffer" value={skill.percent} valueBuffer={100} />
-              </Grid>
-            ))}
-            <Typography className={classes.sectionTitle} style={{marginTop: "15px"}} variant="headline" component="h4" align="left">Tecnologias que alguna vez use</Typography>
-            <CarouselTecnology tecnologies={tecnologies} />
-          </React.Fragment>
+      <React.Fragment>
+        <SectionTitle align="left">Habilidades</SectionTitle>
+        <Grid container spacing={40}>
+          {skills.map((skill, index) => (
+            <Grid item xs={12} key={skill.id}>
+              <Typography variant="title">
+                {skill.title}
+              </Typography>
+              <LinearProgress className={classes.progressSkill} color={index % 2 === 0 ? "primary": "secondary"} variant="buffer" value={skill.percent} valueBuffer={100} />
+            </Grid>
+          ))}
+        </Grid>
+        <Typography className={classes.subTitle}  variant="headline" align="left">Tecnologias que alguna vez use</Typography>
+            <CarouselTecnology tecnologies={tecnologies} slidersToShow={6} slidersToShowTablet={3} slidersToShowMobile={2} />
+      </React.Fragment>
     );
   }
 }

@@ -7,16 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
+import { SectionTitle } from './globals.js';
 
 const styles = theme => ({
-  heroUnit: {
-    flexGrow: 1
-  },
-  heroContent: {
-    maxWidth: 600,
-    margin: '0',
-    padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
-  },
   heroButtons: {
     marginTop: theme.spacing.unit * 4,
   },
@@ -32,18 +25,19 @@ const styles = theme => ({
     display: 'flex'
   },
   textAboutme: {
-    color: "#c3c3c3"
+    color: "#1e1e1e"
 }
 });
 
 class AboutMe extends Component {
 
   render() {
-    const { classes } = this.props;
+    const { classes, changePage } = this.props;
 
     return (
-      <div className={classes.heroUnit}>
-        <Grid container spacing={16}>
+      <React.Fragment>
+      <SectionTitle align="center">Sobre Mi</SectionTitle>
+        <Grid container spacing={16} style={{'maxWidth': 800, 'margin': 'auto'}} >
           <Grid item sm={12} md={4} className={classes.containerVA}>
             <Avatar
               alt="Matias Roson"
@@ -52,7 +46,6 @@ class AboutMe extends Component {
               />
           </Grid>
           <Grid item sm={12} md={8}>
-            <div className={classes.heroContent}>
               <Typography variant="title" align="left" color="textPrimary" gutterBottom className={classes.textAboutme}>
                 Full Stack Developer (Linux, Docker, Django, React)
               </Typography>
@@ -63,28 +56,27 @@ class AboutMe extends Component {
               <div className={classes.heroButtons}>
                 <Grid container spacing={16} align="left">
                   <Grid item>
-                    <Button variant="contained" color="primary">
+                    <Button variant="contained" color="primary" onClick={() => changePage('#contact')}>
                       Contactame
                     </Button>
                   </Grid>
                   <Grid item>
-                    <Button variant="outlined" color="primary">
+                    <Button variant="outlined" color="primary" component="a" href="https://www.linkedin.com/in/matiasroson/" target="_blank">
                       Mira mi perfil en LinkedIn
                     </Button>
                   </Grid>
                 </Grid>
               </div>
-            </div>
           </Grid>
         </Grid>
-      </div>
+      </React.Fragment>
     );
   }
   }
 
 AboutMe.propTypes = {
   classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  changePage: PropTypes.func
 };
 
 export default withStyles(styles, { withTheme: true })(AboutMe);

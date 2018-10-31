@@ -13,15 +13,12 @@ import ProjectDetailDialog from './ProjectDetailDialog';
 import { formatDate } from '../utils';
 import CardHeader from '@material-ui/core/CardHeader';
 import projects from '../data/projects';
+import { SectionTitle } from './globals.js';
 
 const styles = theme => ({
   media: {
     // ⚠️ object-fit is not supported by IE11.
     objectFit: 'cover',
-  },
-  sectionTitle:{
-    marginBottom: "30px",
-    color: "#c3c3c3",
   }
 });
 
@@ -53,7 +50,7 @@ class Portfolio extends Component {
     return (
       <React.Fragment>
         <ProjectDetailDialog open={openProject} project={currentProject} closeDialog={this.closeProjectDetail} />
-        <Typography className={classes.sectionTitle} variant="display1" component="h1" align="center">Projectos en los que trabaje de forma freelance</Typography>
+        <SectionTitle className={classes.sectionTitle} align="center">Projectos en los que trabaje de forma freelance</SectionTitle>
         <Grid container spacing={40} className={classNames(classes.cardGrid)}>
           {projects.map(project => (
             <Grid item xs={12} sm={4} lg={3} key={project.id} >

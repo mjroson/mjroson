@@ -30,16 +30,42 @@ tecnologyName:{
 class CarouselTecnology extends Component {
 
   render() {
-    const { classes, tecnologies } = this.props;
+    const { classes, tecnologies, slidersToShow, slidersToShowTablet, slidersToShowMobile } = this.props;
     const settings = {
       dots: false,
       infinite: true,
       speed: 500,
       autoplay: true,
-      slidesToShow: 5,
-      slidesToScroll: 1,
+      slidesToShow: slidersToShow,
+      slidesToScroll: 2,
       centerPadding: 20,
       centerMode: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: slidersToShow,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: slidersToShowTablet,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: slidersToShowMobile,
+            slidesToScroll: 2
+          }
+        }
+      ]
       //lazyLoad: 'ondemand'
     };
 

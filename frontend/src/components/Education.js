@@ -8,6 +8,9 @@ import Paper from '@material-ui/core/Paper';
 import educations from "../data/education";
 import ButtonBase from '@material-ui/core/ButtonBase';
 import {formatDate} from '../utils';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { SectionTitle } from './globals.js';
 
 const styles = theme => ({
   box: {
@@ -21,53 +24,46 @@ const styles = theme => ({
   img: {
     margin: 'auto',
     display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
+    maxWidth: '90%',
+    maxHeight: '90%',
   },
-  sectionTitle:{
-    marginBottom: "30px",
-    color: "#c3c3c3",
-  }
 });
 
 class Education extends Component {
+
+  getDate = (education) => {
+    return `${ formatDate(education.from) } - ${ formatDate(education.to) }`;
+  }
 
   render() {
     const { classes } = this.props;
 
     return (
       <React.Fragment>
-        <Typography className={classes.sectionTitle} variant="display1" component="h1" align="center">Educacion</Typography>
+        <SectionTitle align="center">Educacion</SectionTitle>
         <Grid container spacing={40}>
+        <VerticalTimeline >
           {educations.map(education => (
-            <Grid item xs={12} sm={6} lg={6} key={education.id}>
-              <Paper className={classes.box}>
-                <Grid container spacing={16}>
-                  <Grid item>
-                    <ButtonBase className={classes.image}>
-                      <img className={classes.img} alt={education.title} src={education.image} />
-                    </ButtonBase>
-                  </Grid>
-                  <Grid item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={16}>
-                      <Grid item xs>
-                        <Typography gutterBottom variant="title">
-                          {education.title}
-                        </Typography>
-                        <Typography gutterBottom>{education.description}</Typography>
-                        <Typography color="textSecondary">{ formatDate(education.from) } - { formatDate(education.to) }</Typography>
-                      </Grid>
-                      {education.ref !== "" && (
-                        <Grid item>
-                          <a href={education.ref} target="_blank">Referencia</a>
-                        </Grid>
-                      )}
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Paper>
-            </Grid>
+            <VerticalTimelineElement
+    className="vertical-timeline-element-education"
+    date={this.getDate(education)}
+    key={education.id}
+    iconStyle={{ contain: "content", verticalAlign: "middle", display: "flex", background: "#fff", color: "#fff" }}
+    icon={<img className={classes.img} alt={education.title} src={education.image} />}
+  >
+    <h3 className="vertical-timeline-element-title">{education.title}</h3>
+    <h4 className="vertical-timeline-element-subtitle">{education.intitution}</h4>
+    <p>
+      {education.description}
+    </p>
+    {education.ref !== "" && (
+      <Grid item>
+        <a href={education.ref} target="_blank">Referencia</a>
+      </Grid>
+    )}
+  </VerticalTimelineElement>
           ))}
+          </VerticalTimeline>
         </Grid>
       </React.Fragment>
     );

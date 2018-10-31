@@ -7,18 +7,12 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import CustomForm from './ContactForm';
 import Typography from '@material-ui/core/Typography';
-import {socialNetworkListItems} from './socialNetworkList';
+import { SectionTitle, SocialNetworkListItems } from './globals.js';
 
 const styles = theme => ({
   box: {
     flexGrow: 1,
     padding: theme.spacing.unit * 2,
-  },
-  sectionTitle:{
-    marginBottom: "30px",
-    [theme.breakpoints.down('md')]: {
-      textAlign: 'center',
-    },
   }
 });
 
@@ -31,9 +25,9 @@ class Contact extends Component {
       <React.Fragment>
         <Grid container spacing={40}>
             <Grid item md={6} lg={6}>
-            <Typography className={classes.sectionTitle} variant="display1" component="h1" align="left">Redes sociales</Typography>
+            <SectionTitle align="left">Redes sociales</SectionTitle>
             <List>
-              {socialNetworkListItems}
+              {SocialNetworkListItems}
             </List>
             </Grid>
             <Grid item md={6} lg={6}>

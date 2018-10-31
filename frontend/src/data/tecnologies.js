@@ -24,6 +24,11 @@ export const tecnologies = {
       "category": ["Language"],
       "image": "/static/tecnology/logo/bash.png"
     },
+    "beautifulsoup": {
+      "name": "Beautiful Soup",
+      "category": ["Framework"],
+      "image": "/static/tecnology/logo/bash.png"
+    },
     "bootstrap": {
         "name": "Bootstrap",
         "category": ["FrontEnd", "Style"],
@@ -83,6 +88,11 @@ export const tecnologies = {
         "name": "ElasticSearch",
         "category": ["Backend", "Framework"],
         "image": "/static/tecnology/logo/elasticsearch.png"
+    },
+    "epay": {
+      "name": "Epay",
+      "category": ["Payment Processor"],
+      "image": "/static/tecnology/logo/epay.png"
     },
     "es6": {
       "name": "Es6",
@@ -174,10 +184,25 @@ export const tecnologies = {
         "category": ["FrontEnd", "Framework"],
         "image": "/static/tecnology/logo/materialui.png"
     },
+    "mercadopago": {
+        "name": "Mercado Pago",
+        "category": ["Backend", "PaymentProcessor"],
+        "image": "/static/tecnology/logo/materialui.png"
+    },
     "mongodb": {
         "name": "MongoDB",
         "category": ["Data", "DataBase"],
         "image": "/static/tecnology/logo/mongo.png"
+    },
+    "mysql": {
+        "name": "MySql/MariaDB",
+        "category": ["Data", "DataBase"],
+        "image": "/static/tecnology/logo/mysql.png"
+    },
+    "nginx": {
+        "name": "Nginx",
+        "category": ["Server"],
+        "image": "/static/tecnology/logo/nginx.png"
     },
     "postgis": {
         "name": "PostGIS",
@@ -203,6 +228,11 @@ export const tecnologies = {
       "name": "Postcss",
       "category": ["Preprocesor"],
       "image": "/static/tecnology/logo/postcss.png"
+    },
+    "propay": {
+      "name": "Propay",
+      "category": ["Payment Processor"],
+      "image": "/static/tecnology/logo/propay.png"
     },
     "openstreetmap": {
         "name": "OpenStreetMap",
@@ -232,6 +262,11 @@ export const tecnologies = {
     "sass": {
         "name": "Sass",
         "category": ["FrontEnd", "Preprocesor"],
+        "image": "/static/tecnology/logo/sass.png"
+    },
+    "sdkpaymentprocessor": {
+        "name": "SDK Payment Processor",
+        "category": ["Backend"],
         "image": "/static/tecnology/logo/sass.png"
     },
     "sqlite": {

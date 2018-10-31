@@ -6,18 +6,13 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import experiences from "../data/experience";
+import Divider from '@material-ui/core/Divider';
+import { SectionTitle } from './globals.js';
 
 const styles = theme => ({
   box:{
     flexGrow: 1,
     padding: theme.spacing.unit * 2,
-  },
-  sectionTitle:{
-    marginBottom: "30px",
-    color: "#c3c3c3",
-    [theme.breakpoints.down('md')]: {
-      textAlign: 'center',
-    },
   }
 });
 
@@ -28,11 +23,10 @@ class Experience extends Component {
 
     return (
       <React.Fragment>
-        <Typography className={classes.sectionTitle} variant="display1" component="h1" align="left">Experiencia laboral</Typography>
+        <SectionTitle className={classes.sectionTitle} align="left">Experiencia laboral</SectionTitle>
         <Grid container spacing={40}>
           {experiences.map(experience => (
-            <Grid item key={experience.id} xs={12} >
-              <Paper className={classes.box} elevation={1}>
+            <Grid item xs={12} key={experience.id}>
                 <Typography variant="title" component="p">
                   {experience.title}
                 </Typography>
@@ -40,7 +34,7 @@ class Experience extends Component {
                 <Typography component="p">
                   {experience.description}
                 </Typography>
-              </Paper>
+                <Divider style={{marginTop: '30px'}}/>
             </Grid>
           ))}
         </Grid>

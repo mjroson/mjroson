@@ -9,7 +9,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe"
 import Button from '@material-ui/core/Button';
 import green from '@material-ui/core/colors/green';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import { SectionTitle } from './globals.js';
 
 const url = "https://github.us19.list-manage.com/subscribe/post?u=0e98caecc0d06149b32e97f46&amp;id=953c9d9cde";
 
@@ -22,10 +22,6 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-  },
-  sectionTitle:{
-    marginBottom: "30px",
-    marginLeft: theme.spacing.unit,
   },
   button: {
     margin: theme.spacing.unit,
@@ -126,7 +122,7 @@ class ContactForm extends Component {
 
     return (
       <Paper className={classes.box}>
-        <Typography className={classes.sectionTitle} variant="display1" component="h1" align="left">Contactame</Typography>
+        <SectionTitle align="left">Contactame</SectionTitle>
         {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
         {status === "error" && (
           <Typography variant="title" color="error" component="h3" align="center">Hubo un error, vuelva a intentar mas tarde o intente por otro medio.</Typography>
