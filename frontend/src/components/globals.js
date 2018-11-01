@@ -30,9 +30,9 @@ function styled(Component) {
 
 // You can even write CSS with https://github.com/cssinjs/jss-template.
 export const SectionTitle = styled(Typography)(theme => ({
-  marginBottom: "30px",
+  marginBottom: "40px",
   fontSize: "2em",
-  color: "#c3c3c3",
+  color: theme.palette.text.secondary,
   textTransform: 'uppercase',
   [theme.breakpoints.down('md')]: {
     textAlign: 'center',

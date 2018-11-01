@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import educations from "../data/education";
-import ButtonBase from '@material-ui/core/ButtonBase';
 import {formatDate} from '../utils';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -25,6 +22,7 @@ const styles = theme => ({
     margin: 'auto',
     display: 'block',
     maxWidth: '90%',
+    textAlign: 'center',
     maxHeight: '90%',
   },
 });
@@ -42,27 +40,27 @@ class Education extends Component {
       <React.Fragment>
         <SectionTitle align="center">Educacion</SectionTitle>
         <Grid container spacing={40}>
-        <VerticalTimeline >
-          {educations.map(education => (
-            <VerticalTimelineElement
-    className="vertical-timeline-element-education"
-    date={this.getDate(education)}
-    key={education.id}
-    iconStyle={{ contain: "content", verticalAlign: "middle", display: "flex", background: "#fff", color: "#fff" }}
-    icon={<img className={classes.img} alt={education.title} src={education.image} />}
-  >
-    <h3 className="vertical-timeline-element-title">{education.title}</h3>
-    <h4 className="vertical-timeline-element-subtitle">{education.intitution}</h4>
-    <p>
-      {education.description}
-    </p>
-    {education.ref !== "" && (
-      <Grid item>
-        <a href={education.ref} target="_blank">Referencia</a>
-      </Grid>
-    )}
-  </VerticalTimelineElement>
-          ))}
+          <VerticalTimeline >
+            {educations.map(education => (
+              <VerticalTimelineElement
+                className="vertical-timeline-element-education"
+                date={this.getDate(education)}
+                key={education.id}
+                iconStyle={{ contain: "content", verticalAlign: "middle", display: "flex", background: "#fff", color: "#fff"  }}
+                icon={<img className={classes.img} alt={education.title} src={education.image} />}
+                >
+                <h3 className="vertical-timeline-element-title">{education.title}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{education.intitution}</h4>
+                <p>
+                  {education.description}
+                </p>
+                {education.ref !== "" && (
+                  <Grid item>
+                    <a href={education.ref} target="_blank">Referencia</a>
+                  </Grid>
+                )}
+              </VerticalTimelineElement>
+            ))}
           </VerticalTimeline>
         </Grid>
       </React.Fragment>

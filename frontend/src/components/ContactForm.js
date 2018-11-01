@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 import Button from '@material-ui/core/Button';
 import green from '@material-ui/core/colors/green';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { SectionTitle } from './globals.js';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
+import Card from '@material-ui/core/Card';
 
 const url = "https://github.us19.list-manage.com/subscribe/post?u=0e98caecc0d06149b32e97f46&amp;id=953c9d9cde";
 
@@ -121,17 +123,22 @@ class ContactForm extends Component {
 );
 
     return (
-      <Paper className={classes.box}>
-        <SectionTitle align="left">Contactame</SectionTitle>
-        {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-        {status === "error" && (
-          <Typography variant="title" color="error" component="h3" align="center">Hubo un error, vuelva a intentar mas tarde o intente por otro medio.</Typography>
-        )}
-        {status === "success" && (
-          <Typography variant="title" color="secondary" component="h3" align="center">Gracias por contactarte {this.state.name} , te respondere a la brevedad.</Typography>
-        )}
-        {status !== 'success' && form}
-      </Paper>
+      <Card className={classes.card}>
+          <CardHeader style={{background: '#273c67'}}
+                      disableTypography={true}
+                      title={<SectionTitle align="center" style={{marginBottom: '0px'}}>Contactame</SectionTitle>}
+                      align="center"/>
+          <CardContent>
+            {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+            {status === "error" && (
+              <Typography variant="title" color="error" component="h3" align="center">Hubo un error, vuelva a intentar mas tarde o intente por otro medio.</Typography>
+            )}
+            {status === "success" && (
+              <Typography variant="title" color="secondary" component="h3" align="center">Gracias por contactarte {this.state.name} , te respondere a la brevedad.</Typography>
+            )}
+            {status !== 'success' && form}
+          </CardContent>
+      </Card>
     );
   }
 }

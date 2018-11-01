@@ -89,6 +89,7 @@ const projects = [
     "to": "actualidad",
     "title": "Resuma",
     "short_description": "Aplicacion online para contrar las ventas de todas tus tarjetas desde un solo lugar.",
+    "descripcion": "Resuma will save you hours on admin by tracking automatically all your store transactions and letting you reconciles them quickly.",
     "description": `Es una app, que te permite controlar de manera simple y automatizada tus ventas por tarjetas de crédito y débito. Planifica con información, lleva el control de tus ingresos y costos y mantener todas tus transacciones a salvo.
   El mayor desafío que presentó esta aplicación fue tener un sistema eficiente y controlado para obtener las transacciones mediante scraper, con clientes que procesan miles de transacciones por día.`,
     "tecnologies": [

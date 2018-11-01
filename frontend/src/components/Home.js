@@ -1,41 +1,24 @@
 import React, { Component } from 'react';
 
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Avatar from '@material-ui/core/Avatar';
 
 const styles = theme => ({
-  heroUnit: {
+  container: {
     flexGrow: 1,
     display: 'table-cell',
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
   },
-  heroContent: {
-    maxWidth: 600,
-    margin: '0',
-    padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
+  textContent:{
+    maxWidth: 800,
+    margin: 'auto',
+    border: "4px solid " + theme.palette.text.secondary,
+    borderRadius: "6px",
+    backgroundColor: "#1513138f",
+    padding: "40px"
   },
-  heroButtons: {
-    marginTop: theme.spacing.unit * 4,
-  },
-  avatar: {
-    margin: 'auto 0 auto auto',
-    verticalAlign: 'middle'
-  },
-  bigAvatar: {
-    width: 150,
-    height: 150,
-  },
-  containerVA: {
-    display: 'flex'
-  },
-  textAboutme: {
-    color: "#c3c3c3"
-},
 homeText: {
   textAlign: "center",
   color: "#fff",
@@ -43,14 +26,14 @@ homeText: {
 }
 });
 
-class AboutMe extends Component {
+class Home extends Component {
 
   render() {
-    const { classes, changePage } = this.props;
+    const { classes } = this.props;
 
     return (
-      <div className={classes.heroUnit}>
-        <Grid container spacing={16} style={{'maxWidth': 800, 'margin': 'auto', border: "4px solid white", borderRadius: "6px", backgroundColor: "#1513138f", padding: "40px"}} >
+      <div className={classes.container}>
+        <Grid container spacing={16} className={classes.textContent} >
               <Typography variant="display3" className={classes.homeText}>
                 I AM MATIAS ROSON
               </Typography>
@@ -63,10 +46,8 @@ class AboutMe extends Component {
   }
   }
 
-AboutMe.propTypes = {
+Home.propTypes = {
   classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
-  changePage: PropTypes.func.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(AboutMe);
+export default withStyles(styles, { withTheme: true })(Home);

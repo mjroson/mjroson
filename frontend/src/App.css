@@ -35,48 +35,11 @@ overflow-x: hidden;
 padding-top: 50px;
 }
 
-#home{
-  background-color: #1e1e1e !important;
-  position: relative;
-  display: table;
-  width: 100%;
-}
-
-#aboutme{
-  position: relative;
-  display: table;
-  width: 100%;
-  background-color: #f27537 !important;
-
-}
 #home canvas, #dialogproject canvas{
   position: absolute;
   width: 100%;
   height: 100%;
 }
-
-#experience{
-  background-color: #d82546 !important;
-
-}
-
-#projects{
-  background-color: #273c67 !important;
-}
-
-#education{
-  background-color:  #baba32 !important;
-}
-
-#contact {
-background-color: #f27537 !important;
-
-}
-
-#footer{
-background-color:  #1e1e1e !important;
-}
-
 
 .vertical-timeline-element-date{
   color: #273c67 !important;

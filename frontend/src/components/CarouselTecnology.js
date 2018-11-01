@@ -51,7 +51,7 @@ class CarouselTecnology extends Component {
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 750,
           settings: {
             slidesToShow: slidersToShowTablet,
             slidesToScroll: 2,
@@ -84,7 +84,7 @@ class CarouselTecnology extends Component {
 
 CarouselTecnology.propTypes = {
   classes: PropTypes.object.isRequired,
-  tecnologies: PropTypes.array.isRequired
+  tecnologies: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(CarouselTecnology);

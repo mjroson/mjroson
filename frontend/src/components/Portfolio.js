@@ -19,6 +19,11 @@ const styles = theme => ({
   media: {
     // ⚠️ object-fit is not supported by IE11.
     objectFit: 'cover',
+  },
+  projectTitle:{
+    color: theme.palette.text.secondary,
+    textTransform: "uppercase",
+    fontWeight: 500
   }
 });
 
@@ -56,9 +61,9 @@ class Portfolio extends Component {
             <Grid item xs={12} sm={4} lg={3} key={project.id} >
               <Card className={classes.card} style={{ cursor: 'pointer' }} onClick={() => this.openProjectDetail(project)}>
                 <CardActionArea>
-                  <CardHeader style={{background: '#c3c3c3'}}
+                  <CardHeader style={{background: '#f27537'}}
                               disableTypography={true}
-                              title={<Typography variant="body2">{project.title}</Typography>}
+                              title={<Typography className={classes.projectTitle}>{project.title}</Typography>}
                               align="center"/>
                   <CardMedia
                     component="img"

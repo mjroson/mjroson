@@ -18,8 +18,8 @@ const styles = theme => ({
     verticalAlign: 'middle'
   },
   bigAvatar: {
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
   },
   containerVA: {
     display: 'flex'
@@ -37,7 +37,7 @@ class AboutMe extends Component {
     return (
       <React.Fragment>
       <SectionTitle align="center">Sobre Mi</SectionTitle>
-        <Grid container spacing={16} style={{'maxWidth': 800, 'margin': 'auto'}} >
+        <Grid container spacing={16} style={{'maxWidth': 1000, 'margin': 'auto'}} >
           <Grid item sm={12} md={4} className={classes.containerVA}>
             <Avatar
               alt="Matias Roson"
@@ -46,12 +46,16 @@ class AboutMe extends Component {
               />
           </Grid>
           <Grid item sm={12} md={8}>
-              <Typography variant="title" align="left" color="textPrimary" gutterBottom className={classes.textAboutme}>
+            <Typography variant="title" align="left" className={classes.textAboutme}>
+              Matias Roson
+            </Typography>
+              <Typography variant="headline" align="left" gutterBottom className={classes.textAboutme}>
                 Full Stack Developer (Linux, Docker, Django, React)
               </Typography>
               <Typography variant="body1" align="left" color="textSecondary" paragraph className={classes.textAboutme}>
-                Desarrollador apasionado y proactivo, con un interés constante y entusiasmo en el aprendizaje de nuevas tecnologías y asumir nuevos retos, siempre buscando el crecimiento personal y profesional.
-                Tratando de implementar e incluir buenas prácticas en los desarrollos, y automatizar tareas con el fin de aumentar la productividad y eficiencia constantemente en mi trabajo.
+                Desarrollador de tecnologias web, apasionado y proactivo por mi trabajo, con interes contante por el aprendizaje de nuevas tecnologias, buenas practicas y eficiencia. <br/>
+              Durante mi experiencia como desarrollador freelance eh desempeñado diferentes puestos en equipos de trabajo: desarrollador full stack, arquitecto, lider tecnico, etc. <br/>
+                Con ganas de aprender y enseñar. Amante del software libre, incursionandome en el nuevo mundo del blockchain y la inteligencia artificial.
               </Typography>
               <div className={classes.heroButtons}>
                 <Grid container spacing={16} align="left">

@@ -3,14 +3,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { SectionTitle } from './globals.js';
+import UpIcon from '@material-ui/icons/KeyboardArrowUp';
+import Button from '@material-ui/core/Button';
+import { goToTop } from 'react-scrollable-anchor'
 
 const styles = theme => ({
   footer: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.text.primary,
     padding: theme.spacing.unit * 6,
-    minHeight: "500px"
+    position: 'relative'
   },
+  topButton:{
+    position: 'absolute',
+    bottom: theme.spacing.unit * 5,
+    right: theme.spacing.unit * 5,
+  }
 });
 
 
@@ -24,15 +31,22 @@ class Footer extends Component {
     this.setState({ value });
   };
 
+  onTop = () => {
+    this.props.changePage('')
+    goToTop();
+  }
+
   render() {
     const { classes } = this.props;
 
     return (
       <footer className={classes.footer} id="footer">
-        <SectionTitle align="center">Footer</SectionTitle>
         <Typography variant="title" align="center" color="textSecondary" component="p">
-          @2018
+          @MatiasRoson 2018
         </Typography>
+        <Button variant="outlined" color="secondary" className={classes.topButton} onClick={() => this.onTop()}>
+             <UpIcon/>
+           </Button>
       </footer>
     );
   }
@@ -40,6 +54,7 @@ class Footer extends Component {
 
 Footer.propTypes = {
   classes: PropTypes.object.isRequired,
+  changePage: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(Footer);

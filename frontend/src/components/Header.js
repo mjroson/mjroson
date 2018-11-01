@@ -67,7 +67,7 @@ class Header extends Component {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-          {sections.filter(section => section.tag != '#footer').map(section => (
+          {sections.filter(section => section.tag !== '#footer').map(section => (
             <ListItem button key={section.tag}
                       onClick={() => changePage(section.tag)}
                       disabled={currentPage === section.tag}>
@@ -78,6 +78,8 @@ class Header extends Component {
             </ListItem>
           ))}
         </List>
+        <Divider />
+
         <List>{SocialNetworkListItems}</List>
       </div>
     );
@@ -95,7 +97,7 @@ class Header extends Component {
         />
             </Typography>
 
-            {sections.filter(section => section.tag != '#footer').map(section => (
+            {sections.filter(section => section.tag !== '#footer').map(section => (
               <Button color="inherit"
                 key={section.tag}
                 className={classes.menuButton}
