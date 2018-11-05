@@ -69,7 +69,7 @@ class Header extends Component {
         <List>
           {sections.filter(section => section.tag !== '#footer').map(section => (
             <ListItem button key={section.tag}
-                      onClick={() => changePage(section.tag)}
+                      onClick={() => {changePage(section.tag); this.handleDrawerToggle(); }}
                       disabled={currentPage === section.tag}>
               <ListItemIcon>
                 <InboxIcon />

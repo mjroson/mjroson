@@ -27,7 +27,7 @@ export const tecnologies = {
     "beautifulsoup": {
       "name": "Beautiful Soup",
       "category": ["Framework"],
-      "image": "/static/tecnology/logo/bash.png"
+      "image": "/static/tecnology/logo/beautifulsoup.png"
     },
     "bootstrap": {
         "name": "Bootstrap",
@@ -187,7 +187,7 @@ export const tecnologies = {
     "mercadopago": {
         "name": "Mercado Pago",
         "category": ["Backend", "PaymentProcessor"],
-        "image": "/static/tecnology/logo/materialui.png"
+        "image": "/static/tecnology/logo/mercadopago.png"
     },
     "mongodb": {
         "name": "MongoDB",
@@ -267,7 +267,7 @@ export const tecnologies = {
     "sdkpaymentprocessor": {
         "name": "SDK Payment Processor",
         "category": ["Backend"],
-        "image": "/static/tecnology/logo/sass.png"
+        "image": "/static/tecnology/logo/sdk.png"
     },
     "sqlite": {
         "name": "SQLite",

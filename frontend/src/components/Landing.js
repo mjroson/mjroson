@@ -20,8 +20,6 @@ const styles = theme => ({
   sections:{
     padding: '80px 40px;',
     minHeight: '800px',
-    flexDirection: 'row',
-    transition: "all .9s ease-in-out"
   },
   particleBg: {
     margin: '-120px -40px -40px'
